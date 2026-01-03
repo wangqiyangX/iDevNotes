@@ -1,0 +1,294 @@
+{
+  "sourceLanguage" : "zh-Hans",
+  "strings" : {
+    "" : {
+
+    },
+    "[StoreKit 文档的 Reviews 部分](https://developer.apple.com/documentation/storekit)" : {
+
+    },
+    "[示例项目：Requesting App Store reviews](https://developer.apple.com/documentation/storekit/requesting-app-store-reviews)" : {
+
+    },
+    "`requestReview` 的使用方法" : {
+
+    },
+    "GitHub" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub"
+          }
+        }
+      }
+    },
+    "Hello, World!" : {
+
+    },
+    "MockKit" : {
+
+    },
+    "个人信息。" : {
+
+    },
+    "使用 StoreKit" : {
+
+    },
+    "使用 URL" : {
+
+    },
+    "修改日志" : {
+
+    },
+    "免责声明" : {
+
+    },
+    "全部" : {
+
+    },
+    "其他" : {
+
+    },
+    "内容" : {
+
+    },
+    "内容免责" : {
+
+    },
+    "最新内容" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Latest"
+          }
+        }
+      }
+    },
+    "分享 iDevNotes" : {
+
+    },
+    "参考资料" : {
+
+    },
+    "因不可抗力因素导致的服务中断，本站不承担责任。" : {
+
+    },
+    "在 SwiftUI 中，可以通过 Enviroment 值获取 StoreKit 提供的 `RequestReviewAction` 类型变量 `requestReview`，简单完成评价对话框的显示。" : {
+
+    },
+    "在你搜索文记、随笔等内容时会添加最近的搜索。" : {
+
+    },
+    "外观" : {
+
+    },
+    "官方文档中提供的示例项目使用了的频率为：每个版本提示一次，在用户完成4次指定操作（一般来说可以是 App 的核心功能）后弹出。" : {
+
+    },
+    "序章" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Home"
+          }
+        }
+      }
+    },
+    "我是一个独立开发者，目前专注于 iOS 端开发，已经上架了几款独立开发的工具，欢迎大家使用" : {
+
+    },
+    "技术免责" : {
+
+    },
+    "搜索" : {
+
+    },
+    "文记" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note"
+          }
+        }
+      }
+    },
+    "无最近搜索" : {
+
+    },
+    "无文章" : {
+
+    },
+    "本站可能包含指向第三方网站的链接，本站不对这些网站的内容或隐私政策负责。" : {
+
+    },
+    "本软件不对内容的准确性、完整性、时效性承担责任。" : {
+
+    },
+    "本软件作为个人博客，包含了一些技术分享，也有一些小插曲，希望能激发你的兴趣，也希望能让你有所收获" : {
+
+    },
+    "本软件内容仅代表作者个人观点，不构成任何形式的建议或指导。" : {
+
+    },
+    "本软件基于 SwiftUI 和 SwiftData 构建构建，本软件尽力保证稳定，但不保证始终可用。" : {
+
+    },
+    "标签" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tag"
+          }
+        }
+      }
+    },
+    "浅色" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light"
+          }
+        }
+      }
+    },
+    "深色" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dark"
+          }
+        }
+      }
+    },
+    "版权所有 © 2026 启阳｜署名—非商业性使用—禁止演绎 4.0 协议国际版" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copyright © 2026 Qiyang | Attribution-NonCommercial-NoDerivatives 4.0 International"
+          }
+        }
+      }
+    },
+    "版权所有 2026 启阳" : {
+
+    },
+    "用户因使用本软件内容而产生的任何后果，需自行承担责任。" : {
+
+    },
+    "用户点击外部链接的行为及其后果由用户自行承担。" : {
+
+    },
+    "目录" : {
+
+    },
+    "示例项目中对此方法包含在 Task 中执行，同时使用了 sleep 确保该对话框弹出来时不会打断用户，详细如下：" : {
+
+    },
+    "第一种，使用 StoreKit 提供的 `requestReview` 方法，该方法会直接在应用中弹出评分对话框。" : {
+
+    },
+    "第三方服务的故障或政策变更可能影响本站功能。" : {
+
+    },
+    "第二种，使用 `openURL` 直接跳转到 App Store 中，并使用 URL 参数弹出评价输入框。" : {
+
+    },
+    "筛选" : {
+
+    },
+    "系列" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Series"
+          }
+        }
+      }
+    },
+    "经过整理的长文。" : {
+
+    },
+    "絮述" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "About"
+          }
+        }
+      }
+    },
+    "署名—非商业性使用—禁止演绎 4.0 协议国际版" : {
+
+    },
+    "联系开发者" : {
+
+    },
+    "自动" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auto"
+          }
+        }
+      }
+    },
+    "自述" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduction"
+          }
+        }
+      }
+    },
+    "致谢" : {
+
+    },
+    "该项目使用了 `AppStorage` 存储上述判断条件，确保用户删除 App 后会重置统计数据。" : {
+
+    },
+    "过去一年共计发布%lld篇文章" : {
+
+    },
+    "通过 `requestReview` 弹出的对话框如果太频繁，可能会给用户带来困扰，因此开发者应该选择一个合适的频率。" : {
+
+    },
+    "通道术、达时务，无事浮躁。" : {
+
+    },
+    "链接免责" : {
+
+    },
+    "随兴而写的小记。" : {
+
+    },
+    "随笔" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jotting"
+          }
+        }
+      }
+    },
+    "项目" : {
+
+    }
+  },
+  "version" : "1.1"
+}

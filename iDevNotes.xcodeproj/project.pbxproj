@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB10514C2F0CA9B900EC348F /* SwiftCodeView in Frameworks */ = {isa = PBXBuildFile; productRef = FB10514B2F0CA9B900EC348F /* SwiftCodeView */; };
+		FB10519D2F0CB7C400EC348F /* SwiftCodeView in Frameworks */ = {isa = PBXBuildFile; productRef = FB10519C2F0CB7C400EC348F /* SwiftCodeView */; };
 		FB49DCE92F0782780085AE9B /* SwiftDraw in Frameworks */ = {isa = PBXBuildFile; productRef = FB49DCE82F0782780085AE9B /* SwiftDraw */; };
-		FB49DD422F08C9D20085AE9B /* SwiftCodeView in Frameworks */ = {isa = PBXBuildFile; productRef = FB49DD412F08C9D20085AE9B /* SwiftCodeView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB49DD422F08C9D20085AE9B /* SwiftCodeView in Frameworks */,
+				FB10519D2F0CB7C400EC348F /* SwiftCodeView in Frameworks */,
+				FB10514C2F0CA9B900EC348F /* SwiftCodeView in Frameworks */,
 				FB49DCE92F0782780085AE9B /* SwiftDraw in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +135,8 @@
 			name = iDevNotes;
 			packageProductDependencies = (
 				FB49DCE82F0782780085AE9B /* SwiftDraw */,
-				FB49DD412F08C9D20085AE9B /* SwiftCodeView */,
+				FB10514B2F0CA9B900EC348F /* SwiftCodeView */,
+				FB10519C2F0CB7C400EC348F /* SwiftCodeView */,
 			);
 			productName = iDevNotes;
 			productReference = FB2AA0302EF0F830002C3731 /* iDevNotes.app */;
@@ -220,7 +223,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				FB49DCE72F0782780085AE9B /* XCRemoteSwiftPackageReference "SwiftDraw" */,
-				FB49DD402F08C9D20085AE9B /* XCRemoteSwiftPackageReference "SwiftCodeView" */,
+				FB10519B2F0CB7C400EC348F /* XCRemoteSwiftPackageReference "SwiftCodeView" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FB2AA0312EF0F830002C3731 /* Products */;
@@ -648,6 +651,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FB10519B2F0CB7C400EC348F /* XCRemoteSwiftPackageReference "SwiftCodeView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wangqiyangX/SwiftCodeView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		FB49DCE72F0782780085AE9B /* XCRemoteSwiftPackageReference "SwiftDraw" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swhitty/SwiftDraw.git";
@@ -656,26 +667,22 @@
 				minimumVersion = 0.25.3;
 			};
 		};
-		FB49DD402F08C9D20085AE9B /* XCRemoteSwiftPackageReference "SwiftCodeView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/wangqiyangX/SwiftCodeView.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FB10514B2F0CA9B900EC348F /* SwiftCodeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftCodeView;
+		};
+		FB10519C2F0CB7C400EC348F /* SwiftCodeView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FB10519B2F0CB7C400EC348F /* XCRemoteSwiftPackageReference "SwiftCodeView" */;
+			productName = SwiftCodeView;
+		};
 		FB49DCE82F0782780085AE9B /* SwiftDraw */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FB49DCE72F0782780085AE9B /* XCRemoteSwiftPackageReference "SwiftDraw" */;
 			productName = SwiftDraw;
-		};
-		FB49DD412F08C9D20085AE9B /* SwiftCodeView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FB49DD402F08C9D20085AE9B /* XCRemoteSwiftPackageReference "SwiftCodeView" */;
-			productName = SwiftCodeView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

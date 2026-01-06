@@ -30,6 +30,7 @@ struct RootTabsView: View {
                 SearchView()
             }
         }
+        .tabViewStyle(.sidebarAdaptable)
     }
 }
 

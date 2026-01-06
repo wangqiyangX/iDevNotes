@@ -66,7 +66,9 @@ struct ArticleDetails: View {
                 }
                 .padding(.horizontal)
             }
-            .toolbarVisibility(.hidden, for: .tabBar)
+            #if os(iOS)
+                .toolbarVisibility(.hidden, for: .tabBar)
+            #endif
             .toolbar {
                 Menu {
                     ForEach(article.toc, id: \.self) { item in
@@ -100,7 +102,7 @@ struct ArticleDetails: View {
 #Preview("NoteDetails") {
     ModelContainerPreview(ModelContainer.sample) {
         NavigationStack {
-            ArticleDetails(Article.如何提示用户给你的应用评价)
+            ArticleDetails(Article.HowtoPromptUserstoRateYourApp)
         }
     }
 }

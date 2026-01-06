@@ -45,6 +45,13 @@ struct iDevNotesApp: App {
                         ? nil : scheme == .dark ? .dark : .light
                 )
                 .modelContainer(sharedModelContainer)
+                #if os(macOS)
+                    .frame(minWidth: 560, minHeight: 600)
+                #endif
         }
+        #if os(macOS)
+            .defaultSize(width: 560, height: 600)
+            .windowResizability(.contentMinSize)
+        #endif
     }
 }

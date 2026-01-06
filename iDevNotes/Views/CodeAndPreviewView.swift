@@ -67,7 +67,7 @@ struct CodeAndPreviewView<Content: View>: View {
                     Spacer()
                 }
             }
-            Picker("内容", selection: $selectedType) {
+            Picker("", selection: $selectedType) {
                 ForEach(ContentType.allCases) { type in
                     Text(type.displayName)
                         .selectionDisabled(type == .preview && content == nil)
@@ -79,24 +79,30 @@ struct CodeAndPreviewView<Content: View>: View {
             Group {
                 switch selectedType {
                 case .code:
-                    SwiftCodeView(codeString)
-                        .padding()
-                        .glassEffect(.regular, in: .rect(cornerRadius: 20))
-                        .overlay(alignment: .topTrailing) {
-                            Button {
+                    ScrollView(.horizontal) {
+                        LazyHStack {
+                            SwiftCodeView(codeString)
+                                .padding()
+                        }
+                    }
+                    .scrollIndicators(.hidden)
+                    .overlay(alignment: .topTrailing) {
+                        Button {
+                            #if os(iOS)
                                 UIPasteboard.general
                                     .setValue(
                                         codeString,
                                         forPasteboardType: UTType
                                             .plainText.identifier
                                     )
-                            } label: {
-                                Image(systemName: "document.on.document")
-                            }
-                            .buttonStyle(.glass)
-                            .font(.caption)
-                            .padding()
+                            #endif
+                        } label: {
+                            Image(systemName: "document.on.document")
                         }
+                        .buttonStyle(.glass)
+                        .font(.caption)
+                        .padding()
+                    }
                 case .preview:
                     if let content {
                         VStack {

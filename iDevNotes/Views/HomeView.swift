@@ -86,7 +86,7 @@ struct HomeView: View {
         let today = calendar.startOfDay(for: Date())
 
         NavigationStack {
-            List {
+            Form {
                 SVGView("logo.svg")
                     .resizable()
                     .scaledToFit()
@@ -154,7 +154,7 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("序章")
-            .navigationSubtitle("通道术、达时务，无事浮躁。")
+            .navigationSubtitle("通道术、达时务，无事浮躁")
             .toolbar {
                 Picker("外观", selection: $scheme) {
                     ForEach(AppColorScheme.allCases, id: \.self) {
@@ -165,9 +165,14 @@ struct HomeView: View {
                         )
                     }
                 }
-                .padding(.trailing, 8)
-                .fixedSize()
+                #if os(iOS)
+                    .padding(.trailing, 8)
+                    .fixedSize()
+                #endif
             }
+            #if os(macOS)
+                .formStyle(.grouped)
+            #endif
         }
     }
 }

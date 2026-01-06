@@ -30,7 +30,7 @@ struct JottingsView: View {
 
     var body: some View {
         NavigationStack {
-            List {
+            Form {
                 Section {
                     ForEach(filteredJottings) { jotting in
                         NavigationLink {
@@ -46,9 +46,9 @@ struct JottingsView: View {
                 }
             }
             .navigationTitle("随笔")
-            .navigationSubtitle("随兴而写的小记。")
+            .navigationSubtitle("随兴而写的小记")
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Menu {
                         Picker("标签", selection: $selectedArticleTag) {
                             Text("全部")
@@ -72,10 +72,15 @@ struct JottingsView: View {
                             )
                         }
                     }
-                    .padding(.trailing, 8)
-                    .fixedSize()
+                    #if os(iOS)
+                        .padding(.trailing, 8)
+                        .fixedSize()
+                    #endif
                 }
             }
+            #if os(macOS)
+                .formStyle(.grouped)
+            #endif
         }
     }
 }

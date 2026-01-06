@@ -11,7 +11,7 @@ import SwiftUI
 
 extension Article {
     // 内部数据 - 每篇文章作为单独的静态常量
-    static let iOS学习路线 = Article(
+    static let iOSPathsWay = Article(
         title: "简单介绍一下 iOS 学习路线",
         type: .note,
         series: .iOS,
@@ -19,7 +19,7 @@ extension Article {
         detailsView: Text("")
     )
 
-    static let 如何提示用户给你的应用评价 = Article(
+    static let HowtoPromptUserstoRateYourApp = Article(
         title: "如何提示用户给你的应用评价",
         type: .note,
         series: .iOS,
@@ -30,6 +30,15 @@ extension Article {
         detailsView: DetailsViewForHowtoPromptUserstoRateYourApp(),
     )
 
+    static let SwiftAPIDesignGuidelines = Article(
+        title: "Swift API 设计指南",
+        series: .translation,
+        tags: [.indie],
+        desc:
+            "在编写 Swift 代码时，提供清晰一致的开发者体验在很大程度上由 API 中出现的命名与用法决定。这些设计准则解释了如何确保你的代码感觉像是更广阔的 Swift 生态系统的一部分。",
+        detailsView: DetailsViewForAPIDesignGuidelines()
+    )
+
     static let firstJotting = Article(
         id: "internal-first-jotting",
         title: "iDevNotes 上架了！",
@@ -38,7 +47,12 @@ extension Article {
 
     // 内部数据列表
     private static var internalArticles: [Article] {
-        [iOS学习路线, 如何提示用户给你的应用评价, firstJotting]
+        [
+            iOSPathsWay,
+            HowtoPromptUserstoRateYourApp,
+            firstJotting,
+            SwiftAPIDesignGuidelines,
+        ]
     }
 
     /// 导入内部数据，覆盖已存在的内部数据

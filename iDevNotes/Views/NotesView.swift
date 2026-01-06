@@ -38,7 +38,7 @@ struct NotesView: View {
 
     var body: some View {
         NavigationStack {
-            List {
+            Form {
                 Section {
                     ForEach(filteredNotes) { note in
                         NavigationLink {
@@ -57,9 +57,9 @@ struct NotesView: View {
                 }
             }
             .navigationTitle("文记")
-            .navigationSubtitle("经过整理的长文。")
+            .navigationSubtitle("经过整理的长文")
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Menu {
                         Picker("系列", selection: $selectedArticleSeries) {
                             Text("全部")
@@ -94,10 +94,15 @@ struct NotesView: View {
                             )
                         }
                     }
-                    .padding(.trailing, 8)
-                    .fixedSize()
+                    #if os(iOS)
+                        .padding(.trailing, 8)
+                        .fixedSize()
+                    #endif
                 }
             }
+            #if os(macOS)
+                .formStyle(.grouped)
+            #endif
         }
     }
 }

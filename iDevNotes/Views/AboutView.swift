@@ -18,30 +18,30 @@ struct Project: Identifiable {
 extension Project {
     static let allProjects: [Project] = [
         Project(
-            icon: "swift",
+            icon: "mockkit",
             name: "MockKit",
-            url: URL(string: "https://swift.org")!
+            url: URL(string: "https://mockkit.qiyang.dev")!
         ),
         Project(
-            icon: "swift",
+            icon: "onyxlib",
             name: "OnyxLib",
-            url: URL(string: "https://swift.org")!
+            url: URL(string: "https://onyxlib.qiyang.dev")!
         ),
         Project(
-            icon: "swift",
+            icon: "linezen",
             name: "LineZen",
-            url: URL(string: "https://swift.org")!
+            url: URL(string: "https://linezen.qiyang.dev")!
         ),
-        Project(
-            icon: "swift",
-            name: "SwiftWuwa",
-            url: URL(string: "https://swift.org")!
-        ),
-        Project(
-            icon: "swift",
-            name: "StarOracle",
-            url: URL(string: "https://swift.org")!
-        ),
+        //        Project(
+        //            icon: "swift",
+        //            name: "SwiftWuwa",
+        //            url: URL(string: "https://swift.org")!
+        //        ),
+        //        Project(
+        //            icon: "swift",
+        //            name: "StarOracle",
+        //            url: URL(string: "https://swift.org")!
+        //        ),
     ]
 }
 
@@ -54,8 +54,10 @@ struct AboutView: View {
     @ViewBuilder
     func projectItem(project: Project) -> some View {
         VStack(spacing: 8) {
-            Image(systemName: project.icon)
-                .font(.system(size: 44))
+            Image(project.icon)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 44, height: 44)
             Text(project.name)
                 .font(.caption)
         }
@@ -68,11 +70,22 @@ struct AboutView: View {
             .regular.interactive(),
             in: .rect(cornerRadius: 20)
         )
+        .onTapGesture {
+            openURL(project.url)
+        }
+    }
+
+    private var gridColumns: [GridItem] {
+        #if os(macOS)
+            return [.init(.adaptive(minimum: 80, maximum: 120))]
+        #else
+            return [.init(.adaptive(minimum: 80, maximum: 120))]
+        #endif
     }
 
     var body: some View {
         NavigationStack {
-            List {
+            Form {
                 Section("自述") {
                     Text(
                         "我是一个独立开发者，目前专注于 iOS 端开发，已经上架了几款独立开发的工具，欢迎大家使用"
@@ -83,7 +96,7 @@ struct AboutView: View {
                 }
                 Section("项目") {
                     LazyVGrid(
-                        columns: [.init(), .init(), .init()],
+                        columns: [.init(.adaptive(minimum: 80, maximum: 120))],
                         spacing: 8
                     ) {
                         ForEach(Project.allProjects) {
@@ -96,7 +109,7 @@ struct AboutView: View {
                     Text("分享 iDevNotes")
                     NavigationLink {
                         List {
-                            
+
                         }
                         .navigationTitle("修改日志")
                     } label: {
@@ -137,7 +150,7 @@ struct AboutView: View {
                     Text("其他")
                 } footer: {
                     VStack(alignment: .leading) {
-                        Text("版权所有 2026 启阳")
+                        Text("版权所有 2026 王启阳")
                         HStack(alignment: .center) {
                             Text("署名—非商业性使用—禁止演绎 4.0 协议国际版")
                         }
@@ -145,9 +158,9 @@ struct AboutView: View {
                 }
             }
             .navigationTitle("絮述")
-            .navigationSubtitle("个人信息。")
+            .navigationSubtitle("个人信息")
             .toolbar {
-                ToolbarItemGroup(placement: .topBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button {
                         openURL(
                             URL(
@@ -177,10 +190,15 @@ struct AboutView: View {
                             )
                         }
                     }
-                    .padding(.trailing, 8)
-                    .fixedSize()
+                    #if os(iOS)
+                        .padding(.trailing, 8)
+                        .fixedSize()
+                    #endif
                 }
             }
+            #if os(macOS)
+                .formStyle(.grouped)
+            #endif
         }
     }
 }

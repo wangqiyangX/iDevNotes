@@ -61,6 +61,9 @@ struct SearchView: View {
                     )
                 }
             }
+            #if os(macOS)
+                .formStyle(.grouped)
+            #endif
         }
     }
 }

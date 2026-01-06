@@ -23,9 +23,9 @@ struct H2: View {
 }
 
 struct H3: View {
-    var text: LocalizedStringKey
+    var text: String
 
-    init(_ text: LocalizedStringKey) {
+    init(_ text: String) {
         self.text = text
     }
 
@@ -33,6 +33,7 @@ struct H3: View {
         Text(text)
             .fontWeight(.semibold)
             .underline()
+            .id(text)
     }
 }
 
